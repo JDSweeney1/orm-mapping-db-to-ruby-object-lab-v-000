@@ -79,12 +79,13 @@ class Student
 
   def self.all_students_in_grade_X(x)
     sq; = <<-SQL
-      SELECT * 
+      SELECT *
       FROM students
       WHERE grade = ?
     SQL
 
     DB[:conn].execute(sql, x)
+  end
 
   def save
     sql = <<-SQL
